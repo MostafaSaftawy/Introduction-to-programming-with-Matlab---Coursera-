@@ -1,0 +1,19 @@
+function indices = saddle(M)
+indices=zeros(0,2);
+[r,c]=size(M);
+k=1;
+for i=1:r
+    for j=1:c
+        point=M(r,c);
+           if (M(i,j)==max(M(i,:)) | M(i,j)==M(i,:)) & (M(i,j)==min(M(:,j)) | M(i,j)==M(:,j))
+            indices(k,1)=i; 
+            indices(k,2)=j;
+            k=k+1; 
+      end
+    end
+end
+if k==1
+    indices=[]; 
+    return
+end
+end
